@@ -1,12 +1,20 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 
 void main() {
+
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent,
+    statusBarBrightness: Brightness.light,
+
+  ));
+
   runApp(new MaterialApp(
+    debugShowCheckedModeBanner: false,
     title: 'Camera App',
-    
     home: LandingScreen(),
   ));
 }
@@ -74,6 +82,7 @@ class _LandingScreenState extends State<LandingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.0,
         title: Text(
           'Main Screen'
         ),
